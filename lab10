@@ -1,0 +1,148 @@
+
+### Exercise 1:
+To test whether `/usr/bin` is a directory or a file, you can use the following `test` command:
+
+```bash
+test -d /usr/bin && echo "/usr/bin is a directory" || echo "/usr/bin is not a directory"
+test -f /usr/bin && echo "/usr/bin is a file" || echo "/usr/bin is not a file"
+```
+
+### Exercise 2:
+```bash
+#!/bin/bash
+
+# Take two strings as input
+read -p "Enter the first string: " str1
+read -p "Enter the second string: " str2
+
+# Compare the strings and print the result
+if [ "$str1" == "$str2" ]; then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal."
+fi
+```
+
+### Exercise 3:
+```bash
+#!/bin/bash
+
+# Take a number as input
+read -p "Enter a number (1-3): " num
+
+# Use case to display the name of the corresponding month
+case $num in
+    1) echo "January" ;;
+    2) echo "February" ;;
+    3) echo "March" ;;
+    *) echo "Invalid number. Enter a number between 1 and 3." ;;
+esac
+```
+
+### Exercise 4:
+```bash
+#!/bin/bash
+
+# Calculate the average of even numbers up to the roll number
+roll_number=10  # Replace with your actual roll number
+sum=0
+count=0
+
+for ((i=2; i<=$roll_number; i+=2)); do
+    sum=$((sum + i))
+    count=$((count + 1))
+done
+
+average=$((sum / count))
+echo "Average of even numbers up to $roll_number is: $average"
+```
+
+### Exercise 5:
+```bash
+#!/bin/bash
+
+# Function to display the name of the week day
+display_weekday() {
+    day_number=$1
+
+    case $day_number in
+        1) echo "Sunday" ;;
+        2) echo "Monday" ;;
+        3) echo "Tuesday" ;;
+        4) echo "Wednesday" ;;
+        5) echo "Thursday" ;;
+        6) echo "Friday" ;;
+        7) echo "Saturday" ;;
+        *) echo "Invalid day number. Enter a number between 1 and 7." ;;
+    esac
+}
+
+# Take a day number as input
+read -p "Enter a day number (1-7): " user_day_number
+
+# Call the function with the provided day number
+display_weekday $user_day_number
+```
+
+### Exercise 6:
+#### Using `while`:
+```bash
+#!/bin/bash
+
+# Display parameters using while loop
+count=1
+
+while [ $# -gt 0 ]; do
+    echo "Parameter $count: $1"
+    shift
+    count=$((count + 1))
+done
+```
+
+#### Using `until`:
+```bash
+#!/bin/bash
+
+# Display parameters using until loop
+count=1
+
+until [ $# -eq 0 ]; do
+    echo "Parameter $count: $1"
+    shift
+    count=$((count + 1))
+done
+```
+
+### Exercise 7:
+```bash
+#!/bin/bash
+
+# Function to perform division operations
+perform_division() {
+    dividend=$1
+    divisor=$2
+
+    quotient=$((dividend / divisor))
+    remainder=$((dividend % divisor))
+
+    echo "Quotient: $quotient"
+    echo "Remainder: $remainder"
+}
+
+# Display menu
+echo "1. Quotient"
+echo "2. Remainder"
+
+# Take user's choice
+read -p "Enter your choice (1 or 2): " choice
+
+# Take dividend and divisor as command line arguments
+read -p "Enter dividend: " dividend
+read -p "Enter divisor: " divisor
+
+# Use case to perform the chosen operation
+case $choice in
+    1) perform_division $dividend $divisor ;;
+    2) perform_division $dividend $divisor ;;
+    *) echo "Invalid choice. Please choose 1 or 2." ;;
+esac
