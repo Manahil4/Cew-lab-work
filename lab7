@@ -1,0 +1,71 @@
+Here are the commands for each of the tasks:
+
+1. **List all files (and subdirectories) in the home directory:**
+   ```bash
+   $ ls ~
+   ```
+
+2. **List all files named chapter1 in the /work directory:**
+   ```bash
+   $ ls /work/chapter1
+   ```
+
+3. **List all files beginning with memo owned by ann:**
+   ```bash
+   $ find /path/to/directory -type f -name "memo*" -user ann
+   ```
+
+4. **Display the content of /etc/passwd file with as many lines at a time as the last digit of your roll number:**
+   ```bash
+   $ cat /etc/passwd | more +<last_digit_of_roll_number>
+   ```
+
+5. **Search the current directory, look for filenames that don't begin with a capital letter:**
+   ```bash
+   $ find . -type f -not -name '[A-Z]*'
+   ```
+
+6. **Search the system for files that were modified within the last two days:**
+   ```bash
+   $ find / -type f -mtime -2
+   ```
+
+7. **Recursively grep for your-name down a directory tree:**
+   ```bash
+   $ grep -r "your-name" /path/to/start/directory
+   ```
+
+8. **List all file names containing your roll number in the end:**
+   ```bash
+   $ find . -type f -name "*<your_roll_number>"
+   ```
+
+9. **List files in your home folder in human-readable format:**
+   ```bash
+   $ ls -lh ~
+   ```
+
+10. **List the contents of directories /bin and /etc:**
+   ```bash
+   $ ls /bin /etc
+   ```
+
+11. **List C source files in the current directory, showing larger file first:**
+   ```bash
+   $ find . -type f -name "*.c" -exec ls -lS {} +
+   ```
+
+12. **Count all files in the current directory:**
+   ```bash
+   $ ls -1 | wc -l
+   ```
+
+13. **Use the pipe (|) operator to combine the output of the ls command with the grep command to filter and display only the files that contain the pattern "hello" in the current directory:**
+   ```bash
+   $ ls | grep "hello"
+   ```
+
+14. **Create a file named sample.txt and write the output of the echo command, containing the text "Hello, Linux!" into this file:**
+   ```bash
+   $ echo "Hello, Linux!" > sample.txt
+   ```
