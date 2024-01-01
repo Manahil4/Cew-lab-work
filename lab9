@@ -1,0 +1,42 @@
+### Exercise 1: Display Name
+```bash
+#!/bin/bash
+
+# Check if a name parameter is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <name>"
+    exit 1
+fi
+
+# Display the provided name
+echo "Hello, $1!"
+```
+
+Save the above script in a file (e.g., `display_name.sh`), make it executable (`chmod +x display_name.sh`), and run it with your name as a parameter.
+
+### Exercise 2: Display Built-in Variables
+```bash
+#!/bin/bash
+
+# Check if a digit parameter is provided
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <digit>"
+    exit 1
+fi
+
+# Display values of built-in variables
+echo "Number of parameters: $#"
+echo "Script name: $0"
+echo "All parameters: $*"
+```
+
+Save the above script in a file (e.g., `display_variables.sh`), make it executable (`chmod +x display_variables.sh`), and run it with a digit as a parameter.
+
+### Exercise 3: Display Environment Variables
+```bash
+#!/bin/bash
+
+# Display values of environment variables
+echo "SHELL: $SHELL"
+echo "PWD: $PWD"
+```
